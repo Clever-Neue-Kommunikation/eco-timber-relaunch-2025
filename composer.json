@@ -40,10 +40,6 @@
     {
       "type": "composer",
       "url": "https://connect.advancedcustomfields.com"
-    },
-    {
-      "type": "git",
-      "url": "https://github.com/TeamMuellerConsulting/sage-boilerplate.git"
     }
   ],
   "require": {
@@ -57,8 +53,6 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "clever/sage-boilerplate": "dev-sage11",
-    "roots/acorn": "^4.3",
     "wpengine/advanced-custom-fields-pro": "^6.2"
   },
   "require-dev": {
