@@ -19,27 +19,27 @@
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "#275186"
+          "color": "#95C11E"
         },
         {
           "name": "Secondary",
           "slug": "secondary",
-          "color": "#e11d48"
+          "color": "#0A271A"
         },
         {
           "name": "Gray Light",
           "slug": "gray-light",
-          "color": "#eaeaea"
+          "color": "#C4C4C4"
         },
         {
           "name": "Gray Medium",
           "slug": "gray-medium",
-          "color": "#8c8c8c"
+          "color": "#7B7B7B"
         },
         {
           "name": "Gray Dark",
           "slug": "gray-dark",
-          "color": "#444444"
+          "color": "#4D4D4D"
         }
       ]
     },
@@ -51,7 +51,7 @@
       }
     },
     "layout": {
-      "contentSize": "1280px",
+      "contentSize": "1176px",
       "wideSize": "1440px"
     },
     "spacing": {
