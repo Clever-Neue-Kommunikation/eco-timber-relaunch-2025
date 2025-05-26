@@ -160,12 +160,8 @@ if (getenv('WP_ENV') === 'development') {
     remove_action('template_redirect', 'redirect_canonical');
 }
 
-require_once 'Blocks/flowbite-test.php';
-require_once 'Blocks/hero-section.php';
-require_once 'Blocks/feature-list-icons.php';
-require_once 'Blocks/hero-section-cta.php';
-require_once 'Blocks/key-stats.php';
-require_once 'Blocks/team-grid.php';
+require_once 'Blocks/project-benefits.php';
+require_once 'Blocks/services-grid.php';
 
 //add Categorie to Gutenberg-Editor for Flowbite-Blocks
 add_filter('block_categories_all', function ($categories) {
