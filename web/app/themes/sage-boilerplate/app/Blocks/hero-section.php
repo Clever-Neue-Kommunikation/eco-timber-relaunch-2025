@@ -12,7 +12,6 @@ add_action('acf/init', function () {
             'category' => 'flowbite-blocks',
             'icon' => 'slides',
             'keywords' => ['flowbite', 'tailwind', 'block'],
-            'render_template' => \Roots\view('blocks.hero-section')->render(),
             'supports' => [
                 'align' => true,
                 'mode' => 'auto',

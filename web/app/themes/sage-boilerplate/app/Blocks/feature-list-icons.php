@@ -2,8 +2,6 @@
 
 namespace App;
 
-use function App\get_custom_css_variables;
-
 add_action('acf/init', function () {
   // Feldgruppe registrieren
   acf_add_local_field_group([
