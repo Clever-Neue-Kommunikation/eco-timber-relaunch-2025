@@ -12,7 +12,7 @@
     @php(wp_head())
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-  </head>
+</head>
 
 <body @php(body_class())>
     @php(wp_body_open())
@@ -23,8 +23,11 @@
         </a>
 
         @include('sections.header')
-
+        @if (is_front_page())
+                @include('partials.hero')
+            @endif
         <main id="main" class="main is-layout-constrained bg-white">
+            
             @yield('content')
             {{-- @include('partials.form-contact') --}}
         </main>
