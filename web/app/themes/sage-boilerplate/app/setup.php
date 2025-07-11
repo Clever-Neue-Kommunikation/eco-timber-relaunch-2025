@@ -160,8 +160,35 @@ if (getenv('WP_ENV') === 'development') {
     remove_action('template_redirect', 'redirect_canonical');
 }
 
+require_once 'Options/contact-settings.php';
+require_once 'Options/options.php';
 require_once 'Blocks/project-benefits.php';
 require_once 'Blocks/services-grid.php';
+require_once 'Blocks/hero-split.php';
+require_once 'Blocks/content-split.php';
+require_once 'Blocks/hero-section.php';
+require_once 'Blocks/text-content.php';
+require_once 'Blocks/icon-grid.php';
+require_once 'Blocks/contact-split.php';
+require_once 'Blocks/preview-reference.php';
+require_once 'Blocks/card-grid.php';
+require_once 'Blocks/partner-grid.php';
+require_once 'Blocks/layered-block.php';
+require_once 'Blocks/serial-sani-block.php';
+require_once 'Blocks/tilgung-table.php';
+require_once 'Blocks/slide-ins.php';
+require_once 'Blocks/jobs-callout.php';
+
+// Custom Post Types
+require_once get_theme_file_path('app/post-types/reference.php');
+
+// Custom Taxonomies
+require_once get_theme_file_path('app/taxonomies/reference-category.php');
+
+// ACF-Felder
+require_once get_theme_file_path('app/fields/reference-fields.php');
+
+require_once 'Blocks/reference-grid.php';
 
 //add Categorie to Gutenberg-Editor for Flowbite-Blocks
 add_filter('block_categories_all', function ($categories) {
@@ -177,3 +204,35 @@ add_filter('block_categories_all', function ($categories) {
 
     return $categories;
 }, 10, 2);
+
+
+add_action('template_redirect', function () {
+    if (is_post_type_archive('reference')) {
+        global $wp_query;
+        $wp_query->set_404();
+        status_header(404);
+        nocache_headers();
+    }
+});
+
+
+add_filter('wpseo_breadcrumb_links', function ($links) {
+    if (is_singular('reference')) {
+        // Entfernt ggf. automatisch eingefügte CPT-Archivseite („Referenzen“)
+        $links = array_filter($links, function ($link) {
+            return $link['text'] !== 'Referenzen';
+        });
+
+        // Elternseite manuell einfügen (nur wenn sie noch nicht da ist)
+        $breadcrumb = [
+            'url' => get_permalink(get_page_by_path('referenz-projekte')),
+            'text' => 'Referenz-Projekte',
+        ];
+
+        // Einfügen direkt vor dem aktuellen Beitrag
+        array_splice($links, -1, 0, [$breadcrumb]);
+    }
+
+    return array_values($links); // Indizes zurücksetzen
+});
+

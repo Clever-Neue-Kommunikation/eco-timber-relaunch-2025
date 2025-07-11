@@ -11,7 +11,7 @@
   <div class="grid xl:grid-cols-2 items-center">
 
     {{-- Linke Spalte --}}
-    <div class="bg-primary bg-full-primary-left px-4 py-20 xl:my-12 relative with-slant with-slant--primary-right z-10">
+    <div class="bg-primary bg-full-primary-left px-8 xl:px-4 py-20 xl:my-12 relative with-slant with-slant--primary-right z-10">
       <h2 class="heading-2 text-secondary mb-15">
         {{ get_field('title') }}
       </h2>
@@ -19,19 +19,12 @@
         {!! get_field('text') !!}
       </div>
 
-      <div class="flex flex-col xl:flex-row gap-6 items-center">
-        <div class="flex items-center gap-2">
-          <a href="tel:036065023100"
-          class="mt-4 sm:mt-0 btn btn-clean">
-          <i class="fa-regular fa-phone-arrow-right text-2xl text-secondary"></i>
-          +49 (0) 3606 502310-0
-        </a>
-        </div>
-        <a href="mailto:info@eco-timber.de"
-          class="mt-4 sm:mt-0 btn btn-secondary">
-          E-Mail an uns
-        </a>
-      </div>
+      @include('partials.contact-buttons', [
+        'phoneBtnClass' => 'text-secondary',
+        'phoneIconColor' => 'text-secondary',
+        'emailBtnClass' => 'btn-secondary',
+        'align' => 'justify-start'
+    ])
     </div>
 
     {{-- Rechte Spalte --}}
@@ -45,6 +38,5 @@
         @endforeach
       @endif
     </div>
-
   </div>
 </section>

@@ -24,6 +24,8 @@
     "vite": "^6.2.0"
   },
   "dependencies": {
+    "imagesloaded": "^5.0.0",
+    "mixitup": "^3.3.2",
     "swiper": "^11.2.7"
   }
 }

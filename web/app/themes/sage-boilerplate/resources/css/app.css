@@ -1,6 +1,7 @@
 @import "tailwindcss" theme(static);
 @import './fonts.css';
 @import './slider.css';
+@import './reference.css';
 @import './styles.css';
 @source "../views/";
 @source "../../app/";
@@ -14,11 +15,18 @@
   --font-display: 'Barlow Condensed', sans-serif;
   --default-font-family: var(--font-sans);
 
+  --breakpoint-xs:500px;
+  --breakpoint-md: 768px;
   --breakpoint-xl: 1176px;
   --breakpoint-2xl: 1280px;
+  --breakpoint-3xl: 1500px;
 
+  --text-xs: 15px;
   --text-sm: 1rem;
   --text-base: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.625rem;
   --text-5xl: 2.75rem;
   --text-6xl: 3.5rem;
   --text-9xl: 6.875rem;
@@ -39,11 +47,6 @@
   --color-secondary: #0A271A;
 }
 
-:root :where(.is-layout-constrained)>* {
-  /* margin-block-start: initial;
-  margin-block-end: inherit; */
-}
-
 section {
   margin-bottom: 120px !important;
 }
@@ -56,7 +59,7 @@ a {
   text-decoration: none;
 }
 p{
-  @apply text-base 
+
 }
 .heading-2 {
   @apply text-5xl xl:text-6xl xl:leading-15 leading-12 font-display font-black italic tracking-wide
@@ -74,7 +77,9 @@ p{
 .btn-primary {
   @apply bg-primary text-secondary border-2 border-primary hover:bg-secondary hover:text-primary transition
 }
-
+.btn-primary-outline{
+  @apply text-primary border-2 border-primary hover:bg-primary hover:text-white
+}
 .btn-white {
   @apply border-2 text-white border-white hover:bg-white hover:text-secondary
 }
@@ -84,5 +89,5 @@ p{
 }
 
 .btn-clean {
-  @apply text-secondary p-0 flex items-center gap-2
+  @apply p-0 flex items-center gap-2
 }

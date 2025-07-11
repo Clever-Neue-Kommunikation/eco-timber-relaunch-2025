@@ -4,19 +4,19 @@
     $items = get_field('items');
 @endphp
 
-<section class="{{ $classes }} px-2 sm:px-0">
+<section class="{{ $classes }} px-2">
     <div class="is-layout-constrained text-center mb-17">
         <div class="px-8 sm:px-16 xl:px-32">
             <h2 class="heading-2 mb-7">{{ get_field('title') }}</h2>
             <p class="subtitle">{{ get_field('subtitle') }}</p>
         </div>
-        <div class="text-gray-medium px-8 sm:px-16 xl:px-32 font-medium">
+        <div class="text-gray-medium px-8 sm:px-16 xl:px-32 font-medium text-base">
             {!! get_field('description') !!}
         </div>
     </div>
 
     @if ($items && is_iterable($items))
-        <div class="space-y-2">
+        <div class="space-y-2 mb-30">
             @foreach (array_chunk($items, 2) as $rowIndex => $pair)
                 @php $reverse = $rowIndex % 2 === 1; @endphp
                 <div class="grid xl:grid-cols-2 gap-2">
@@ -39,7 +39,7 @@
                             </div>
                             <div class="sm:w-1/2 flex flex-col justify-center px-8 py-8 2xl:px-11 2xl:py-11 items-start {{ $align }} {{ $textAlign }}">
                                 <h3 class="heading-3 {{ $heading }} 2xl:mb-11 mb-8 uppercase">{{ $item['title'] }}</h3>
-                                <p class="mb-11 text-white font-medium">{{ $item['description'] }}</p>
+                                <p class="mb-11 text-white text-base font-medium">{{ $item['description'] }}</p>
                                 @if ($item['button_text'] && $item['button_url'])
                                     <a href="{{ esc_url($item['button_url']) }}"
                                         class="btn btn-white">
@@ -53,18 +53,10 @@
             @endforeach
         </div>
     @endif
-    <div class="flex flex-col xl:flex-row gap-6 items-center justify-center pt-30">
-        <div class="flex items-center gap-2">
-          <a href="tel:036065023100"
-          class="mt-4 sm:mt-0 btn btn-clean">
-          <i class="fa-regular fa-phone-arrow-right text-2xl text-secondary"></i>
-          +49 (0) 3606 502310-0
-        </a>
-        </div>
-        <a href="mailto:info@eco-timber.de"
-          class="mt-4 sm:mt-0 btn btn-secondary">
-          E-Mail an uns
-        </a>
-      </div>
-    </div>
+    @include('partials.contact-buttons', [
+        'phoneBtnClass' => 'text-secondary',
+        'phoneIconColor' => 'text-secondary',
+        'emailBtnClass' => 'btn-secondary',
+        'align' => 'justify-center'
+    ])
 </section>

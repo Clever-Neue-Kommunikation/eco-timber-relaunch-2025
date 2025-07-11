@@ -1,7 +1,7 @@
 @props(['image', 'link' => '#', 'linkText' => 'Mehr erfahren', 'logos'])
 
 <div class="swiper-slide relative h-full">
-    <img src="{{ $image }}" class="object-cover w-full h-full" alt="">
+    <img src="{{ $image }}" class="object-cover w-full h-[850px]" alt="">
     <div>
         <img src="{{ Vite::asset('resources/images/siegel.jpg') }}" alt="" class="h-24 absolute bottom-24 left-50 hidden xl:block">
     </div>

@@ -2,13 +2,13 @@
     <div class="grid xl:grid-cols-[45%_55%]">
 
         {{-- LINKE SPALTE --}}
-        <div class="relative flex items-center bg-secondary order-2 xl:order-1">
+        <div class="relative flex items-center justify-center xl:justify-start bg-secondary order-2 xl:order-1">
             {{-- Schräge Fläche als before-Element --}}
             <div class="absolute inset-0 with-slant with-slant--secondary-right z-10"></div>
 
             {{-- Inhalt mit CONTAINER --}}
-            <div class="w-full xl:ml-[calc((100vw-1176px)/2)] z-10 xl:ps-4 px-4 pb-15 pt-15 xl:pt-48 xl:pb-0 text-center xl:text-start">
-                <p class="subtitle text-nowrap">
+            <div class="xl:ml-[calc((100vw-1176px)/2)] z-10 xl:ps-2 px-4 pb-15 pt-15 xl:pt-48 xl:pb-0 text-center xl:text-start">
+                <p class="subtitle xl:text-nowrap">
                     Natürlich nachhaltig. Perfekt verarbeitet.
                 </p>
                 <h1
@@ -34,13 +34,13 @@
                 <div class="swiper-wrapper">
                     @include('partials.hero-slide', [
                         'image' => Vite::asset('resources/images/header-holzbau.jpg'),
-                        'link' => '/holzbau',
+                        'link' => '/leistungen/holzbau',
                         'linkText' => 'Holzbau',
                     ])
                     @include('partials.hero-slide', [
-                        'image' => Vite::asset('resources/images/header-holzbau.jpg'),
-                        'link' => '/holzbau',
-                        'linkText' => 'Holzbau',
+                        'image' => Vite::asset('resources/images/header-lohnabbund.jpg'),
+                        'link' => '/leistungen/lohnabbund',
+                        'linkText' => 'Lohnabbund',
                     ])
                 </div>
                 <div class="swiper-pagination bottom-10"></div>

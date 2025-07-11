@@ -1,0 +1,4 @@
+.references .filters .mixitup-control-active{
+    background-color: var(--color-primary);
+    color: white;
+}
