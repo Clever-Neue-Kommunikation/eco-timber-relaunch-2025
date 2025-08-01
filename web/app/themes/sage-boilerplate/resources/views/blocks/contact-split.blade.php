@@ -10,7 +10,7 @@
         {{-- Linke Spalte --}}
         <div
             class="bg-primary bg-full-primary-left ps-4 xl:os-4 pe-8 py-24 xl:my-12 relative with-slant with-slant--primary-right z-10">
-            <div class="heading-2 text-secondary">
+            <div class="heading-2 uppercase text-secondary">
                 {!! get_field('text1') !!}
             </div>
         </div>

@@ -29,9 +29,9 @@
 <section class="alignfull">
     <!-- 1. Slanted Callout -->
     <div class="{{ $classes }}">
-        <div class="flex relative mx-auto items-center bg-full-secondary-left">
+        <div class="flex relative mx-auto items-center">
             <div
-                class="w-full relative z-1 flex flex-col items-center justify-center lg:w-1/2 xl:ml-[calc((100%-1176px)/2)] ml-8 xl:ps-4 py-30 with-slant with-slant--secondary-right text-primary">
+                class="w-full relative z-1 flex flex-col items-center justify-center lg:w-1/2 xl:ml-[calc((100%-1176px)/2)] ml-8 xl:ps-4 py-30 with-slant with-slant--secondary-right bg-full-secondary-left text-primary">
                 @if ($heading)
                     <h2 class="heading-2 mb-4">{{ $heading }}</h2>
                 @endif

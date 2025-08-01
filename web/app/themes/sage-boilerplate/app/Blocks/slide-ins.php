@@ -8,6 +8,12 @@ add_action('acf/init', function () {
         'title' => 'Slide-Ins Einstellungen',
         'fields' => [
             [
+                'key' => 'field_slide_ins_icon',
+                'label' => 'Icon-Klasse',
+                'name' => 'slide_ins_icon',
+                'type' => 'text',
+            ],
+            [
                 'key' => 'field_slide_ins_title',
                 'label' => 'Titel',
                 'name' => 'slide_ins_title',

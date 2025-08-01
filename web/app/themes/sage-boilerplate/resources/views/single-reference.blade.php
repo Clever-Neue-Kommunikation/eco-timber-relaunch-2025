@@ -10,7 +10,7 @@
                     {{-- Inhalt --}}
                     <div
                         class="flex basis-[45%] items-end justify-center lg:justify-start relative shrink grow-0 z-1 with-slant with-slant--secondary-right xl:ml-[calc((100%-1176px)/2)] order-2 lg:order-1">
-                        <div class="py-15 lg:py-0 px-2 lg:px-0 xl:!ps-4 lg:ps-8   text-center lg:text-left">
+                        <div class="py-15 lg:py-0 px-2 lg:px-0 xl:!ps-4 lg:ps-8 z-1 text-center lg:text-left">
                             @if ($subtitle = get_field('project_subtitle'))
                                 <p class="text-primary !text-2xl xl:!text-3xl font-bold italic pb-8 lg:whitespace-nowrap">
                                     {{ $subtitle }}</p>
@@ -60,68 +60,69 @@
                 <div
                     class="flex basis-[50%] items-center relative shrink grow-0 z-1 with-slant with-slant--secondary-left bg-secondary pe-4">
                     <div class="px-15 py-15 lg:py-0 flex flex-col justify-between w-full ">
+
+                        @if ($projectname = get_field('project_name'))
                         <div class="flex mb-10">
                             <div class="basis-[50%]">
                                 <p class="text-base text-gray-light">Projektname:</p>
                             </div>
                             <div class="basis-[50%]">
-                                @if ($projectname = get_field('project_name'))
                                     <p class="text-base text-white font-bold">{{ $projectname }}</p>
-                                @endif
                             </div>
                         </div>
+                        @endif
 
+                        @if ($project_location = get_field('project_location'))
                         <div class="flex mb-10">
                             <div class="basis-[50%]">
                                 <p class="text-base text-gray-light">Projektort:</p>
                             </div>
                             <div class="basis-[50%]">
-                                @if ($project_location = get_field('project_location'))
                                     <p class="text-white text-base">
                                         {{ $project_location }}
                                     </p>
-                                @endif
                             </div>
                         </div>
+                        @endif
 
+                        @if ($project_year = get_field('project_year'))
                         <div class="flex mb-10">
                             <div class="basis-[50%]">
                                 <p class="text-base text-gray-light">Ausführungszeitraum:</p>
                             </div>
                             <div class="basis-[50%]">
-                                @if ($project_year = get_field('project_year'))
                                     <p class="text-white text-base">
                                         {{ $project_year }}
                                     </p>
-                                @endif
                             </div>
                         </div>
+                        @endif
 
+                        @if ($construction_type = get_field('construction_type'))
                         <div class="flex mb-10">
                             <div class="basis-[50%]">
                                 <p class="text-base text-gray-light">Bauweise:</p>
                             </div>
                             <div class="basis-[50%]">
-                                @if ($construction_type = get_field('construction_type'))
                                     <p class="text-white text-base">
                                         {{ $construction_type }}
                                     </p>
-                                @endif
                             </div>
                         </div>
+                        @endif
 
+                        @if ($wood_types = get_field('wood_types'))
                         <div class="flex mb-10">
                             <div class="basis-[50%]">
                                 <p class="text-base text-gray-light">Verarbeitete Holzarten:</p>
                             </div>
                             <div class="basis-[50%]">
-                                @if ($wood_types = get_field('wood_types'))
                                     <p class="text-white text-base">
                                         {{ $wood_types }}
                                     </p>
-                                @endif
                             </div>
                         </div>
+                        @endif
 
                         <div class="flex flex-wrap mb-5">
                             <p class="w-full text-base font-extrabold text-gray-light">Eco-Timber-Leistungen</p>
@@ -143,45 +144,48 @@
                         </div>
 
 
-
+                        @if ($contractor = get_field('contractor'))
                         <div class="flex">
                             <div class="basis-[50%]">
                                 <p class="text-base text-gray-light">Ausführende Firma:</p>
                             </div>
                             <div class="basis-[50%]">
-                                @if ($contractor = get_field('contractor'))
+                                
                                     <p class="text-white text-base">
                                         {{ $contractor }}
                                     </p>
-                                @endif
                             </div>
                         </div>
+                        @endif
 
+                        @if ($planning_office = get_field('planning_office'))
                         <div class="flex">
                             <div class="basis-[50%]">
                                 <p class="text-base text-gray-light">Holzbauplanung:</p>
                             </div>
                             <div class="basis-[50%]">
-                                @if ($planning_office = get_field('planning_office'))
+                                
                                     <p class="text-white text-base">
                                         {{ $planning_office }}
                                     </p>
-                                @endif
                             </div>
                         </div>
+                        @endif
 
+                        @if ($architecture = get_field('architecture'))
                         <div class="flex">
                             <div class="basis-[50%]">
                                 <p class="text-base text-gray-light">Architekturbüro:</p>
                             </div>
                             <div class="basis-[50%]">
-                                @if ($architecture = get_field('architecture'))
+                                
                                     <p class="text-white text-base">
                                         {{ $architecture }}
                                     </p>
-                                @endif
+                                
                             </div>
                         </div>
+                        @endif
 
                     </div>
                 </div>
@@ -245,6 +249,41 @@
             ])
             : []
 )
+
+<section class="is-layout-constrained overflow-hidden alignfull">
+    <div class="grid xl:grid-cols-2 items-center">
+
+        {{-- Linke Spalte --}}
+        <div
+            class="bg-primary bg-full-primary-left ps-4 xl:os-4 pe-8 py-24 xl:my-12 relative with-slant with-slant--primary-right z-10">
+            <div class="heading-2 uppercase text-secondary">
+                Sie möchten mehr über unsere Projekte erfahren oder Ihr eigenes mit uns realisieren?
+            </div>
+        </div>
+
+        {{-- Rechte Spalte --}}
+        <div
+            class="bg-secondary bg-full-secondary-right text-white relative xl:ps-0 py-24 grid gap-18 xl:gap-12 items-center xl:justify-items-start justify-items-center with-slant with-slant--secondary-left z-1">
+
+            <div class="flex flex-col xl:flex-row xl:items-end gap-10 xl:gap-10 px-4 xl:px-0">
+                <div class="shrink-0 text-center">
+                    <img src="{{ Vite::asset('resources/images/Mitarbeiterbilder-061.jpg') }}" alt="" class="xl:w-full h-full m-auto object-cover pb-15" />
+                    <a class="btn btn-primary-outline xl:ms-15" href="">E-Mail an Christian</a>
+                </div>
+                <div class=" text-primary font-display italic text-2xl font-extrabold">
+                    "Hallo, ich bin Christian Thüne – und Ihr Ansprechpartner rund um unsere Referenzen und Leistungen. Melden Sie sich gern – ich freue mich auf Ihre Anfrage!"
+                    <div class="mt-15 flex flex-col items-center xl:items-start">
+                        <a class="btn btn-clean text-white" href=""><i
+                                class="fa-regular fa-phone-arrow-right text-2xl text-primary"></i> +49 (0) 3606
+                            502310-31</a>
+                        <a class="btn btn-clean text-white mt-5" href=""><i
+                                class="fa-regular fa-mobile-button text-2xl text-primary me-1"></i> +49 (0) 162 1726946</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         {{-- Ausgabe --}}
         @if (!empty($related_references))

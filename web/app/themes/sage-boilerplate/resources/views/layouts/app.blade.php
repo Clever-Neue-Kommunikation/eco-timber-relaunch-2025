@@ -5,14 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script defer src="{{ Vite::asset('resources/static/icons/regular.js') }}"></script>
-    <script defer src="{{ Vite::asset('resources/static/icons/fontawesome.js') }}"></script>
+ 
+
+    {{-- 2. Core-Skript (fontawesome.js) --}}
+    <script defer src="{{ Vite::asset('resources/static/icons/fontawesome.js') }}" crossorigin="anonymous"></script>
+
+    {{-- 3. Stil-Modul (regular.js) --}}
+    <script defer src="{{ Vite::asset('resources/static/icons/regular.js') }}" crossorigin="anonymous"></script>
 
     @php(do_action('get_header'))
     @php(wp_head())
-
+    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
+
+
 
 <body @php(body_class())>
     @php(wp_body_open())
@@ -24,10 +32,10 @@
 
         @include('sections.header')
         @if (is_front_page())
-                @include('partials.hero')
-            @endif
+            @include('partials.hero')
+        @endif
         <main id="main" class="main is-layout-constrained bg-white">
-            
+
             @yield('content')
             {{-- @include('partials.form-contact') --}}
         </main>

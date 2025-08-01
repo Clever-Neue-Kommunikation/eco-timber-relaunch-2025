@@ -24,7 +24,7 @@
          class="bg-white flex flex-wrap items-center justify-between mx-auto pt-4 pb-4 px-8 xl:px-4 shadow-sm rounded-sm">
       <a href="/" class="flex items-center space-x-3">
         <img id="nav-logo" src="{{ Vite::asset('resources/images/logo-eco-timber.png') }}"
-             class="h-10 transition-all duration-300" alt="TMC Logo">
+             class="h-14 transition-all duration-300" alt="Eco Timber Logo">
       </a>
       <button data-collapse-toggle="navbar-dropdown" type="button"
               class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-secondary rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-light"

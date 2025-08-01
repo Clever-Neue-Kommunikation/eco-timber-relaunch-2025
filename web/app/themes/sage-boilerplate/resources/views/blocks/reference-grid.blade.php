@@ -85,7 +85,7 @@
             @if (get_field('show_reference_summary'))
                 <div
                     class="relative mix rounded shadow-sm overflow-hidden hover:shadow-2xl transition-shadow bg-secondary">
-                    <img src="{{ Vite::asset('resources/images/project-card.png') }}" alt="Alle Projekte ansehen"
+                    <img src="{{ Vite::asset('resources/images/eco-timber_referenzprojekte_card_overview_alle_projekte.webp') }}" alt="Alle Projekte ansehen"
                         class="w-full h-120 object-contain " />
                     <div class="pb-4 ps-4 xl:ps-8 pe-8 pt-10 absolute top-0 w-full flex">
                         <h3 class="text-xl text-white font-bold italic w-full">

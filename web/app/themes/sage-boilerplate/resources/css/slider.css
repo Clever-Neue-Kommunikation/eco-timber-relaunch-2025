@@ -19,3 +19,10 @@
   background-color: var(--color-primary) !important;
   /* Tailwind "primary" hex */
 }
+
+/* Partner Slider */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+  

@@ -1,4 +1,5 @@
 @php
+    $icon = get_field('slide_ins_icon');
     $title = get_field('slide_ins_title');
     $title2 = get_field('slide_ins_title2');
     $subtitle = get_field('slide_ins_subtitle');
@@ -7,12 +8,17 @@
     $btnUrl = get_field('slide_ins_button_url');
     // holt nun die ausgewählte Tailwind-Klasse
     $bgClass = get_field('slide_ins_bg_class') ?: 'slide-in-primary-left';
-    $marginTop = get_field('slide_ins_margin_top') ?: '!-mt-0';
+    $marginTop = get_field('slide_ins_margin_top') ?: '!mt-0';
 
     $btnMap = [
         'slide-in-primary-left' => 'btn-secondary',
         'slide-in-secondary-left' => 'btn-primary-outline',
     ];
+    $headlineColor = match ($bgClass) {
+        'slide-in-primary-left' => 'text-secondary',
+        'slide-in-secondary-left' => 'text-primary',
+        default => 'text-secondary',
+    };
     // setze Default auf btn-primary wenn nichts gemappt ist
     $buttonClass = 'btn ' . ($btnMap[$bgClass] ?? 'btn-primary-outline');
 @endphp
@@ -24,19 +30,23 @@
         <div class="basis-2/3 pr-8">
             {{-- $title --}}
             @if ($title)
-                <h2 class="heading-2 text-secondary uppercase mb-4">{{ $title }}</h2>
+                <h2 class="heading-2 {{ $headlineColor }} uppercase">
+                    @if ($icon)
+                        <i class="{{ $icon }} {{ $headlineColor }} pe-4"></i>
+                    @endif{{ $title }}
+                </h2>
             @endif
 
             @if ($subtitle)
-                <p class="text-white text-base uppercase font-medium mb-10">{{ $subtitle }}</p>
+                <p class="text-white text-base uppercase font-medium mt-4 mb-10">{{ $subtitle }}</p>
             @endif
 
-            @if($title2)
+            @if ($title2)
                 <p class="text-primary text-2xl font-black italic mb-10">{{ $title2 }}</p>
             @endif
 
             @if ($text)
-                <div class="prose prose-invert mb-8 text-white text-base">
+                <div class="prose prose-invert mb-8 mt-10 text-white text-base">
                     {!! $text !!}
                 </div>
             @endif

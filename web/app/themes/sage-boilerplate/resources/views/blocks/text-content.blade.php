@@ -11,10 +11,10 @@
   $classes = implode(' ', $classes);
 @endphp
 
-<section class="{{ $classes }} xl:ps-4 ps-8 pe-4">
+<section class="{{ $classes }} xl:ps-4 ps-8 pe-8 xl:pe-4">
   <div class="is-layout-constrained ">
     @if ($headline)
-      <h2 class="heading-2 text-secondary">{{ $headline }}</h2>
+      <h2 class="heading-2 text-secondary uppercase">{{ $headline }}</h2>
     @endif
 
     @if ($subheadline)

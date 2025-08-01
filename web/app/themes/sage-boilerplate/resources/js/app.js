@@ -1,14 +1,16 @@
 import 'flowbite';
 import './blocks/reference-grid.js';
+import './blocks/calendar.js';
 import.meta.glob([
   '../images/**',
   '../fonts/**',
 ]);
 import Swiper from 'swiper';
-import { EffectFade, Pagination, Autoplay } from 'swiper/modules';
+import { EffectFade, Pagination, Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('main-nav');
@@ -22,14 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.classList.remove(...relaxedClass);
       nav.classList.add(...stickyClass);
       navDiv.classList.remove('shadow-sm');
-      navLogo.classList.add('h-8');
-      navLogo.classList.remove('h-10');
+      navLogo.classList.add('h-10');
+      navLogo.classList.remove('h-14');
     } else {
       nav.classList.remove(...stickyClass);
       nav.classList.add(...relaxedClass);
       navDiv.classList.add('shadow-sm');
-      navLogo.classList.remove('h-8');
-      navLogo.classList.add('h-10');
+      navLogo.classList.remove('h-10');
+      navLogo.classList.add('h-14');
     }
   });
 });
@@ -57,3 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    new Swiper('.partnerSwiper', {
+      modules: [Navigation, Autoplay],
+      loop: true,
+      slidesPerView: 3,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        320:  { slidesPerView: 1 },
+        640:  { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+      // Autoplay optional
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+  });

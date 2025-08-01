@@ -10,6 +10,8 @@
     $text_align = get_field('reference_text_align') ?: 'text-left';
     $btnText = get_field('button_text');
     $btnUrl = get_field('button_url');
+    $rightdescription = get_field('right_description');
+    $leftdescription = get_field('left_description');
 
     $bgColor = get_field('bg_color') ?: 'white';
     if ($bgColor === 'green') {
@@ -28,7 +30,7 @@
 
 
 
-<section class=" {{ $containerBg }} {{ $containerText }} {{ $classes }} is-layout-constrained !mb-40">
+<section class=" {{ $containerBg }} {{ $containerText }} {{ $classes }} is-layout-constrained py-20">
     <div class=" text-center px-8 xl:px-4">
         @if ($headline)
             <h2 class="heading-2 uppercase mb-0 {{ $headlineColor }} {{ $text_align }}">
@@ -36,7 +38,14 @@
             </h2>
         @endif
         @if ($subtitle)
-            <p class="subtitle mt-6 {{ $text_align }}">{{ $subtitle }}</p>
+            <p class="subtitle mt-6 mb-20 {{ $text_align }}">{{ $subtitle }}</p>
+        @endif
+
+        @if($leftdescription && $rightdescription)
+        <div class="grid grid-cols-1 lg:grid-cols-2 text-white text-base text-left gap-14 my-16">
+                {!! $leftdescription !!}
+                {!! $rightdescription !!}
+        </div>
         @endif
 
         @foreach ($chunks as $chunk)
@@ -62,7 +71,7 @@
                 };
             @endphp
 
-            <div class="grid items-stretch {{ $chunkCols }} justify-items-center gap-6 gap-y-10 xl:gap-y-20 mt-20">
+            <div class="grid items-stretch {{ $chunkCols }} justify-items-center mt-10 gap-6 gap-y-10 xl:gap-y-20">
                 @foreach ($chunk as $item)
                     @php
                         $isHighlighted = $item['use_highlight'];

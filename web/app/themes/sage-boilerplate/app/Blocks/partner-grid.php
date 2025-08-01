@@ -8,6 +8,17 @@ add_action('acf/init', function () {
         'title' => 'Partner Grid Einstellungen',
         'fields' => [
             [
+                'key' => 'field_pg_background',
+                'label' => 'Hintergrundfarbe',
+                'name' => 'pt_background',
+                'type' => 'select',
+                'choices' => [
+                    'secondary' => 'Dunkelgrün (secondary)',
+                    'white' => 'Weiß',
+                ],
+                'default_value' => 'white',
+            ],
+            [
                 'key' => 'field_partner_grid_title',
                 'label' => 'Block-Titel',
                 'name' => 'partner_grid_title',

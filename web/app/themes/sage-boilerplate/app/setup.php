@@ -178,15 +178,36 @@ require_once 'Blocks/serial-sani-block.php';
 require_once 'Blocks/tilgung-table.php';
 require_once 'Blocks/slide-ins.php';
 require_once 'Blocks/jobs-callout.php';
+require_once 'Blocks/certifications.php';
+require_once 'Blocks/project-sizes.php';
+require_once 'Blocks/build-types.php';
+require_once 'Blocks/reference-grid.php';
+require_once 'Blocks/funding-bubbles.php';
+require_once 'Blocks/two-col-text.php';
+require_once 'Blocks/split-info-quote.php';
+require_once 'Blocks/two-col-images-text.php';
+require_once 'Blocks/advantages-grid.php';
+require_once 'Blocks/application-areas.php';
+require_once 'Blocks/quality-levels.php';
+require_once 'Blocks/partner-slider.php';
+require_once 'Blocks/mitarbeiter-uebersicht.php';
+require_once 'Blocks/logo-grid.php';
+require_once 'Blocks/event-calendar.php';
+require_once 'Blocks/company-insight-grid.php';
 
 // Custom Post Types
 require_once get_theme_file_path('app/post-types/reference.php');
+require_once get_theme_file_path('app/post-types/mitarbeiter.php');
+// Custom Post Types for Events
+require_once get_theme_file_path('app/post-types/event.php');
 
 // Custom Taxonomies
 require_once get_theme_file_path('app/taxonomies/reference-category.php');
 
 // ACF-Felder
 require_once get_theme_file_path('app/fields/reference-fields.php');
+require_once get_theme_file_path('app/fields/mitarbeiter-fields.php');
+require_once get_theme_file_path('app/fields/event-fields.php');
 
 require_once 'Blocks/reference-grid.php';
 

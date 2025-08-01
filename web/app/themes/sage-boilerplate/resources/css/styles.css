@@ -1,7 +1,7 @@
 .with-slant::before {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     width: 114px;
     height: 100%;
     transform: skewX(-7deg);
@@ -20,9 +20,18 @@
     right: -90px;
     transform-origin: left top;
 }
+.with-slant--white-right::before {
+    background-color: var(--color-white);
+    right: -90px;
+    transform-origin: left top;
+}
 
 .with-slant--secondary-left::before {
     background-color: var(--color-secondary);
+    transform-origin: left top;
+}
+.with-slant--white-left::before {
+    background-color: var(--color-white);
     transform-origin: left top;
 }
 
@@ -101,7 +110,6 @@
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
     z-index: -1;
 }
 .bg-full-secondary-left::after {
@@ -111,7 +119,8 @@
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
+    z-index: -1;
 }
 
 .breadcrumb {
@@ -124,4 +133,60 @@
 
 .breadcrumb_last {
     color: var(--color-gray-medium);
+}
+
+.list-item ul li:not(:first-child) {
+    @apply !my-5;
+}
+
+.list-item ul li svg{
+    @apply me-3 text-xl;
+}
+.list-item-secondary ul li svg{
+    @apply text-secondary;
+    @apply text-3xl;
+}
+.list-item-primary ul li svg{
+    @apply text-primary;
+}
+
+.list-bullets ul {
+    @apply list-disc ps-5;
+    ::marker {
+        color: var(--color-primary);
+    }
+    li{
+        @apply mb-6;                                                                                        
+    }
+}
+.with-numbers .grid div{
+    align-items: center;
+}
+.with-numbers .grid div p::before {
+    width: 30px;
+    height: 30px;
+    @apply bg-primary text-secondary rounded-full flex items-center justify-center;
+    @apply text-xl font-black italic mb-2 mt-2 mx-auto;
+}
+.with-numbers .grid > :nth-child(1) p::before {
+    content: '1.';
+}
+.with-numbers .grid > :nth-child(2) p::before {
+    content: '2.';
+}
+.with-numbers .grid > :nth-child(3) p::before {
+    content: '3.';
+}
+.with-numbers .grid > :nth-child(4) p::before {
+    content: '4.';
+}
+.with-numbers .grid > :nth-child(5) p::before {
+    content: '5.';
+}
+.with-numbers .grid > :nth-child(6) p::before {
+    content: '6.';
+}
+
+.two-col-text ul{
+    column-count: 2;
 }

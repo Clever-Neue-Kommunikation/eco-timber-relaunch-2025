@@ -27,6 +27,30 @@ add_action('acf/init', function () {
         'default_value' => 'left',
       ],
       [
+        'key' => 'field_cs_img_cover',
+        'label' => 'Bild cover',
+        'name' => 'img_cover',
+        'type' => 'true_false',
+        'ui' => 1,
+        'default_value' => 1,
+      ],
+      [
+        'key' => 'field_cs_equal_height',
+        'label' => 'Bild und Content gleiche Höhe',
+        'name' => 'equal_height',
+        'type' => 'true_false',
+        'ui' => 1,
+        'default_value' => 1,
+      ],
+      [
+        'key' => 'field_cs_big_font',
+        'label' => 'Große Schrift',
+        'name' => 'big_font',
+        'type' => 'true_false',
+        'ui' => 1,
+        'default_value' => 0,
+      ],
+      [
         'key' => 'field_cs_background',
         'label' => 'Hintergrundfarbe',
         'name' => 'background',
@@ -34,6 +58,7 @@ add_action('acf/init', function () {
         'choices' => [
           'primary' => 'Grün (primary)',
           'secondary' => 'Dunkelgrün (secondary)',
+          'white' => 'Weiß',
         ],
         'default_value' => 'secondary',
       ],
@@ -41,6 +66,12 @@ add_action('acf/init', function () {
         'key' => 'field_cs_headline',
         'label' => 'Überschrift',
         'name' => 'headline',
+        'type' => 'text',
+      ],
+      [
+        'key' => 'field_cs_sub_headline',
+        'label' => 'Unter-Überschrift',
+        'name' => 'sub_headline',
         'type' => 'text',
       ],
       [
